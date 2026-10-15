@@ -1,0 +1,34 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, GITHUB_URL, LINKEDIN_URL } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`About — ${SITE_TITLE}`} description="About Lauren Min Kim." />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>About</h1>
+			<p>
+				I work at the intersection of artificial intelligence and international security, with a
+				focus on how advanced and autonomous systems affect civilians in conflict. My background
+				spans AI red-teaming, adversarial evaluation of frontier models, and international
+				security research.
+			</p>
+			<p>
+				This site is where I publish open-source analysis, data-based forecasts, and briefings.
+				Views are my own.
+			</p>
+			<p>
+				Find me on <a href={LINKEDIN_URL} target="_blank" rel="noopener">LinkedIn</a> and
+				<a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>.
+			</p>
+		</main>
+		<Footer />
+	</body>
+</html>

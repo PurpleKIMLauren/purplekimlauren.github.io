@@ -1,0 +1,50 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE } from '../consts';
+
+// 앱/프로젝트를 여기에 추가하세요.
+const projects = [
+	{
+		title: 'Global AI Governance Dashboard',
+		blurb: 'Interactive comparison of the EU AI Act, US NIST AI RMF, and China’s algorithm regulation, in seven languages.',
+		live: '/ai-governance/',
+		repo: 'https://github.com/PurpleKIMLauren/ai_governance_dashboard',
+	},
+];
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`Projects — ${SITE_TITLE}`} description="Apps, tools, and dashboards." />
+		<style>
+			.grid { display: grid; gap: 1.2rem; }
+			.card { border: 1px solid rgb(var(--gray-light)); border-radius: 12px; padding: 1.3rem 1.4rem; }
+			.card h3 { margin: 0 0 0.4rem; }
+			.card p { margin: 0 0 0.8rem; color: rgb(var(--gray)); }
+			.card .links a { margin-right: 1rem; }
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<h1>Projects</h1>
+			<p>Apps, tools, and interactive dashboards.</p>
+			<div class="grid">
+				{projects.map((p) => (
+					<div class="card">
+						<h3>{p.title}</h3>
+						<p>{p.blurb}</p>
+						<div class="links">
+							{p.live && <a href={p.live}>Live →</a>}
+							{p.repo && <a href={p.repo} target="_blank" rel="noopener">GitHub →</a>}
+						</div>
+					</div>
+				))}
+			</div>
+		</main>
+		<Footer />
+	</body>
+</html>

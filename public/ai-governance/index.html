@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global AI Governance Frameworks — Comparison Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo-wrap">
+        <svg class="logo-icon" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="AI Governance Dashboard logo" width="36" height="36">
+          <circle cx="18" cy="18" r="16" stroke="currentColor" stroke-width="2"/>
+          <circle cx="18" cy="18" r="6" fill="currentColor"/>
+          <line x1="18" y1="2" x2="18" y2="10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="18" y1="26" x2="18" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="2" y1="18" x2="10" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="26" y1="18" x2="34" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <line x1="6.1" y1="6.1" x2="12.2" y2="12.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="23.8" y1="23.8" x2="29.9" y2="29.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="29.9" y1="6.1" x2="23.8" y2="12.2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="12.2" y1="23.8" x2="6.1" y2="29.9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="logo-label">AI Governance</span>
+          <span class="logo-sub">Global Framework Analysis</span>
+        </div>
+      </div>
+      <nav class="header-nav">
+        <a href="#comparison">Comparison</a>
+        <a href="#dimensions">Dimensions</a>
+        <a href="#conflicts">Conflicts</a>
+      </nav>
+      <div class="lang-select" style="display:inline-flex;align-items:center;gap:.4rem;margin-right:.5rem">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        <label for="lang-menu" style="font-size:.82rem;opacity:.85">Language</label>
+        <select id="lang-menu" data-lang-menu aria-label="Language"
+          style="font:inherit;font-size:.82rem;color:inherit;background:transparent;border:1px solid currentColor;border-radius:999px;padding:.35rem .55rem;cursor:pointer">
+          <option value="en">English</option>
+          <option value="zh-CN">中文 (Chinese)</option>
+          <option value="ja">日本語 (Japanese)</option>
+          <option value="ko">한국어 (Korean)</option>
+          <option value="es">Español (Spanish)</option>
+          <option value="de">Deutsch (German)</option>
+          <option value="fr">Français (French)</option>
+        </select>
+      </div>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-badges">
+          <span class="badge badge-eu">EU AI Act</span>
+          <span class="badge-sep">vs</span>
+          <span class="badge badge-us">US NIST RMF</span>
+          <span class="badge-sep">vs</span>
+          <span class="badge badge-cn">China Algorithm Reg.</span>
+        </div>
+        <h1 class="hero-title">Global AI Governance<br/>Frameworks</h1>
+        <p class="hero-sub">A structured analysis of the EU AI Act's risk-based tiers, the US NIST AI Risk Management Framework, and China's Algorithm Regulation — including where they conflict and what that means for multinational compliance.</p>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-num">3</span>
+            <span class="stat-label">Major Frameworks</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">4</span>
+            <span class="stat-label">Compliance Dimensions</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-num">5</span>
+            <span class="stat-label">Cross-Jurisdictional Conflicts</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FRAMEWORK OVERVIEW CARDS -->
+    <section class="section" id="comparison">
+      <div class="container">
+        <div class="section-label">Framework Overview</div>
+        <h2 class="section-title">Three Distinct Regulatory Philosophies</h2>
+        <div class="framework-cards">
+
+          <!-- EU AI ACT -->
+          <div class="fcard fcard-eu">
+            <div class="fcard-header">
+              <div class="fcard-flag">
+                <svg viewBox="0 0 60 40" fill="none" width="48" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="60" height="40" rx="3" fill="#003399"/>
+                  <g fill="#FFCC00">
+                    <circle cx="30" cy="20" r="1.3"/>
+                    <circle cx="30" cy="13" r="1.3"/>
+                    <circle cx="30" cy="27" r="1.3"/>
+                    <circle cx="23" cy="14.5" r="1.3"/>
+                    <circle cx="37" cy="14.5" r="1.3"/>
+                    <circle cx="23" cy="25.5" r="1.3"/>
+                    <circle cx="37" cy="25.5" r="1.3"/>
+                    <circle cx="20" cy="20" r="1.3"/>
+                    <circle cx="40" cy="20" r="1.3"/>
+                    <circle cx="22" cy="17" r="1.3"/>
+                    <circle cx="38" cy="17" r="1.3"/>
+                    <circle cx="22" cy="23" r="1.3"/>
+                    <circle cx="38" cy="23" r="1.3"/>
+                  </g>
+                </svg>
+              </div>
+              <div>
+                <span class="fcard-region">European Union</span>
+                <h3 class="fcard-name">EU AI Act</h3>
+              </div>
+            </div>
+            <div class="fcard-meta">
+              <span class="fcard-tag">Risk-Based Tiers</span>
+              <span class="fcard-tag fcard-tag-mandatory">Legally Binding</span>
+            </div>
+            <p class="fcard-desc">The world's first comprehensive AI law. Classifies AI systems into four risk tiers with mandatory obligations proportional to risk. Entered into force August 2024, with high-risk provisions enforced from August 2026 (AI Act Omnibus revision: standalone high-risk systems by December 2027).</p>
+            <div class="fcard-risk-tiers">
+              <div class="tier tier-banned">
+                <span class="tier-dot"></span>
+                <span>Unacceptable Risk — Banned</span>
+              </div>
+              <div class="tier tier-high">
+                <span class="tier-dot"></span>
+                <span>High-Risk — Strict obligations</span>
+              </div>
+              <div class="tier tier-limited">
+                <span class="tier-dot"></span>
+                <span>Limited-Risk — Transparency only</span>
+              </div>
+              <div class="tier tier-minimal">
+                <span class="tier-dot"></span>
+                <span>Minimal-Risk — Largely unregulated</span>
+              </div>
+            </div>
+            <div class="fcard-penalty">
+              <span class="penalty-label">Max Penalty</span>
+              <span class="penalty-val eu-penalty">€35M or 7% global turnover</span>
+            </div>
+          </div>
+
+          <!-- NIST AI RMF -->
+          <div class="fcard fcard-us">
+            <div class="fcard-header">
+              <div class="fcard-flag">
+                <svg viewBox="0 0 60 40" fill="none" width="48" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="60" height="40" rx="3" fill="#B22234"/>
+                  <rect y="3" width="60" height="3" fill="#fff"/>
+                  <rect y="9" width="60" height="3" fill="#fff"/>
+                  <rect y="15" width="60" height="3" fill="#fff"/>
+                  <rect y="21" width="60" height="3" fill="#fff"/>
+                  <rect y="27" width="60" height="3" fill="#fff"/>
+                  <rect y="33" width="60" height="3" fill="#fff"/>
+                  <rect width="26" height="21" rx="1" fill="#3C3B6E"/>
+                  <g fill="white" font-size="3">
+                    <circle cx="4" cy="4" r="1.2"/><circle cx="9" cy="4" r="1.2"/><circle cx="14" cy="4" r="1.2"/><circle cx="19" cy="4" r="1.2"/><circle cx="24" cy="4" r="1.2"/>
+                    <circle cx="6.5" cy="7" r="1.2"/><circle cx="11.5" cy="7" r="1.2"/><circle cx="16.5" cy="7" r="1.2"/><circle cx="21.5" cy="7" r="1.2"/>
+                    <circle cx="4" cy="10" r="1.2"/><circle cx="9" cy="10" r="1.2"/><circle cx="14" cy="10" r="1.2"/><circle cx="19" cy="10" r="1.2"/><circle cx="24" cy="10" r="1.2"/>
+                    <circle cx="6.5" cy="13" r="1.2"/><circle cx="11.5" cy="13" r="1.2"/><circle cx="16.5" cy="13" r="1.2"/><circle cx="21.5" cy="13" r="1.2"/>
+                    <circle cx="4" cy="16" r="1.2"/><circle cx="9" cy="16" r="1.2"/><circle cx="14" cy="16" r="1.2"/><circle cx="19" cy="16" r="1.2"/><circle cx="24" cy="16" r="1.2"/>
+                  </g>
+                </svg>
+              </div>
+              <div>
+                <span class="fcard-region">United States</span>
+                <h3 class="fcard-name">NIST AI RMF</h3>
+              </div>
+            </div>
+            <div class="fcard-meta">
+              <span class="fcard-tag">Voluntary Guidelines</span>
+              <span class="fcard-tag fcard-tag-voluntary">Non-Binding</span>
+            </div>
+            <p class="fcard-desc">Released January 2023. A lifecycle-oriented framework with four core functions: Govern, Map, Measure, and Manage. Voluntary but increasingly referenced by US federal agencies, regulators, and courts as a due diligence benchmark. Generative AI Profile (NIST-AI-600-1) released July 2024. Critical Infrastructure Profile added April 2026.</p>
+            <div class="fcard-risk-tiers">
+              <div class="tier tier-gov">
+                <span class="tier-dot"></span>
+                <span>Govern — Culture &amp; accountability</span>
+              </div>
+              <div class="tier tier-map">
+                <span class="tier-dot"></span>
+                <span>Map — Context &amp; risk identification</span>
+              </div>
+              <div class="tier tier-measure">
+                <span class="tier-dot"></span>
+                <span>Measure — Analysis &amp; prioritization</span>
+              </div>
+              <div class="tier tier-manage">
+                <span class="tier-dot"></span>
+                <span>Manage — Mitigation &amp; response</span>
+              </div>
+            </div>
+            <div class="fcard-penalty">
+              <span class="penalty-label">Enforcement</span>
+              <span class="penalty-val us-penalty">FTC, FDA, SEC, EEOC, state laws</span>
+            </div>
+          </div>
+
+          <!-- CHINA -->
+          <div class="fcard fcard-cn">
+            <div class="fcard-header">
+              <div class="fcard-flag">
+                <svg viewBox="0 0 60 40" fill="none" width="48" height="32" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="60" height="40" rx="3" fill="#DE2910"/>
+                  <polygon points="10,8 11.5,13 16,13 12.3,15.9 13.7,20.5 10,17.5 6.3,20.5 7.7,15.9 4,13 8.5,13" fill="#FFDE00"/>
+                  <polygon points="19,5 20,8 22.5,8 20.5,9.5 21.3,12 19,10.5 16.7,12 17.5,9.5 15.5,8 18,8" fill="#FFDE00"/>
+                  <polygon points="24,10 25,13 27.5,13 25.5,14.5 26.3,17 24,15.5 21.7,17 22.5,14.5 20.5,13 23,13" fill="#FFDE00"/>
+                  <polygon points="24,18 25,21 27.5,21 25.5,22.5 26.3,25 24,23.5 21.7,25 22.5,22.5 20.5,21 23,21" fill="#FFDE00"/>
+                  <polygon points="19,22 20,25 22.5,25 20.5,26.5 21.3,29 19,27.5 16.7,29 17.5,26.5 15.5,25 18,25" fill="#FFDE00"/>
+                </svg>
+              </div>
+              <div>
+                <span class="fcard-region">People's Republic of China</span>
+                <h3 class="fcard-name">Algorithm Regulation</h3>
+              </div>
+            </div>
+            <div class="fcard-meta">
+              <span class="fcard-tag">Service-Oriented</span>
+              <span class="fcard-tag fcard-tag-mandatory">Legally Binding</span>
+            </div>
+            <p class="fcard-desc">A layered ecosystem: Algorithm Recommendation Regulation (March 2022), Deep Synthesis Regulation (January 2023), and Generative AI Interim Measures (August 2023). Enforced by the Cyberspace Administration of China (CAC). Unique focus on content compliance, political alignment, and state security alongside technical AI governance.</p>
+            <div class="fcard-risk-tiers">
+              <div class="tier tier-alg">
+                <span class="tier-dot"></span>
+                <span>Algorithm Rec. Reg. — Transparency &amp; filing</span>
+              </div>
+              <div class="tier tier-deep">
+                <span class="tier-dot"></span>
+                <span>Deep Synthesis Reg. — Watermarking &amp; labelling</span>
+              </div>
+              <div class="tier tier-gen">
+                <span class="tier-dot"></span>
+                <span>Generative AI Measures — Content &amp; data</span>
+              </div>
+              <div class="tier tier-pipl">
+                <span class="tier-dot"></span>
+                <span>PIPL / DSL — Data localization backbone</span>
+              </div>
+            </div>
+            <div class="fcard-penalty">
+              <span class="penalty-label">Max Penalty</span>
+              <span class="penalty-val cn-penalty">Fines + service suspension + criminal liability</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DIMENSION COMPARISON TABLE -->
+    <section class="section section-alt" id="dimensions">
+      <div class="container">
+        <div class="section-label">Four Key Dimensions</div>
+        <h2 class="section-title">Side-by-Side Regulatory Requirements</h2>
+        <p class="section-sub">Select a dimension to explore how each framework addresses transparency, oversight, privacy, and liability.</p>
+
+        <div class="dim-tabs">
+          <button class="dim-tab active" data-dim="transparency">Transparency</button>
+          <button class="dim-tab" data-dim="oversight">Human Oversight</button>
+          <button class="dim-tab" data-dim="privacy">Data Privacy</button>
+          <button class="dim-tab" data-dim="liability">Liability</button>
+        </div>
+
+        <div class="dim-content">
+
+          <!-- TRANSPARENCY -->
+          <div class="dim-panel active" data-panel="transparency">
+            <div class="dim-grid">
+              <div class="dim-card eu-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag eu-flag">EU</span>
+                  <h4>EU AI Act</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Mandatory disclosure to users</strong>
+                      <p>Users must be informed when interacting with AI systems (chatbots, emotion recognition). Article 50 is an explicit requirement.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>GPAI model documentation</strong>
+                      <p>Providers must maintain technical documentation and publish a summary of training data for general-purpose AI models.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Watermarking of AI-generated content</strong>
+                      <p>AI Act Omnibus moves watermarking requirement to <strong>2 December 2026</strong>. Deepfakes and public-interest content must be visibly labeled.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Technical documentation for high-risk AI</strong>
+                      <p>Detailed logging, documentation, and traceability reports for high-risk systems (Article 16–19).</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Conformity assessment registration</strong>
+                      <p>High-risk systems must be registered in the EU AI database; third-party conformity assessment required in many cases.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill eu-fill" style="width:90%"></div>
+                  </div>
+                  <span class="strength-pct">High (Mandatory)</span>
+                </div>
+              </div>
+
+              <div class="dim-card us-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag us-flag">US</span>
+                  <h4>NIST AI RMF</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Govern function — transparency culture</strong>
+                      <p>Encourages organizations to build transparency into AI governance policies, but specifies no binding disclosure rules.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Map function — AI Bill of Materials (AI-BOM)</strong>
+                      <p>Recommended practice: maintain an inventory of models, data sources, and third-party AI components for traceability.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Generative AI Profile (NIST-AI-600-1)</strong>
+                      <p>Addresses unique transparency risks of GenAI including hallucinations, data provenance, and content authenticity. Voluntary.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-note">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>No binding transparency mandate</strong>
+                      <p>NIST AI RMF itself imposes no disclosure obligations. Actual requirements come from sector-specific regulators (FTC, SEC, FDA).</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill us-fill" style="width:30%"></div>
+                  </div>
+                  <span class="strength-pct">Low (Voluntary)</span>
+                </div>
+              </div>
+
+              <div class="dim-card cn-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag cn-flag">CN</span>
+                  <h4>China Algorithm Reg.</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Algorithmic filing with CAC</strong>
+                      <p>Providers with "public opinion attributes or social mobilization capability" must file within 10 working days of launch, disclosing logic, purpose, and mechanisms.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>AI-generated content labelling</strong>
+                      <p>Deep Synthesis Regulation and Generative AI Measures require conspicuous labelling and watermarking of AI-synthesized content.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>User-facing transparency (Article 16)</strong>
+                      <p>Providers must inform users about the basic principles, intended purposes, and main operating mechanisms of algorithmic recommendation services.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Training data transparency to regulators</strong>
+                      <p>Under GenAI Measures Article 19, providers must cooperate with inspections and explain training data sources, scale, and type to authorities.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Content alignment transparency</strong>
+                      <p>Outputs must comply with Chinese content regulations, and content moderation decisions must be reported to relevant authorities.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill cn-fill" style="width:80%"></div>
+                  </div>
+                  <span class="strength-pct">High (State-directed)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- HUMAN OVERSIGHT -->
+          <div class="dim-panel" data-panel="oversight">
+            <div class="dim-grid">
+              <div class="dim-card eu-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag eu-flag">EU</span>
+                  <h4>EU AI Act</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Article 14 — Mandatory human oversight</strong>
+                      <p>High-risk AI systems must be designed to allow effective oversight by natural persons during use, including the ability to stop or override the system.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Deployer obligation</strong>
+                      <p>Deployers must assign oversight to a person with necessary competence, training, and authority. Cannot be delegated to an untrained individual.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Automation bias prevention</strong>
+                      <p>Oversight personnel must be aware of automation bias risks and retain the authority to disregard, override, or reverse AI system outputs.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Biometric ID: two-person verification</strong>
+                      <p>For high-risk biometric identification (Annex III), no decision may be taken unless confirmed by at least two qualified natural persons independently.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Employee notification</strong>
+                      <p>Employers deploying high-risk AI in the workplace must inform employee representatives and the affected employees before deployment.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill eu-fill" style="width:92%"></div>
+                  </div>
+                  <span class="strength-pct">Very High (Mandatory)</span>
+                </div>
+              </div>
+
+              <div class="dim-card us-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag us-flag">US</span>
+                  <h4>NIST AI RMF</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Manage function — human review</strong>
+                      <p>Recommends organizations implement processes for human review and response to AI system outputs, especially for consequential decisions.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Govern function — accountability structures</strong>
+                      <p>Encourages defining roles, responsibilities, and accountability chains for AI system decisions, including escalation paths.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Critical Infrastructure Profile (2026)</strong>
+                      <p>New April 2026 profile specifically addresses human oversight requirements for AI in critical infrastructure sectors.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-note">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>No universal oversight mandate</strong>
+                      <p>No binding requirement for human-in-the-loop. Sector-specific rules from FDA (medical AI), FAA (aviation), and NHTSA (autonomous vehicles) add separate obligations.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill us-fill" style="width:28%"></div>
+                  </div>
+                  <span class="strength-pct">Low (Voluntary)</span>
+                </div>
+              </div>
+
+              <div class="dim-card cn-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag cn-flag">CN</span>
+                  <h4>China Algorithm Reg.</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Algorithm mechanism verification (Article 7)</strong>
+                      <p>Providers must establish management systems for algorithm mechanism examination, technology ethics reviews, and security assessment and monitoring.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Content moderation oversight</strong>
+                      <p>Providers must promptly remove illegal content, employ model optimization training, and report violations — implicitly requiring human review processes.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>User opt-out rights (Article 17)</strong>
+                      <p>Users may request to opt out of personalized algorithmic recommendations, effectively mandating a non-AI human-comparable alternative.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-note">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>State oversight, not user oversight</strong>
+                      <p>China's approach emphasizes government oversight over AI providers (via CAC inspections) rather than user-level human oversight of AI decisions.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill cn-fill" style="width:60%"></div>
+                  </div>
+                  <span class="strength-pct">Medium (State-Directed)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- DATA PRIVACY -->
+          <div class="dim-panel" data-panel="privacy">
+            <div class="dim-grid">
+              <div class="dim-card eu-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag eu-flag">EU</span>
+                  <h4>EU AI Act + GDPR</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>GDPR + AI Act interlock</strong>
+                      <p>AI Act builds on GDPR. Special category data processing in AI requires explicit legal basis. The Omnibus revision creates a carve-out allowing limited personal data processing for bias detection with GDPR Article 9 safeguards.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>High-quality training data requirements</strong>
+                      <p>High-risk AI systems must use datasets free from biases and errors; providers must document data governance practices.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Fundamental Rights Impact Assessment</strong>
+                      <p>Deployers of high-risk AI in the public sector must conduct an FRIA before deployment, assessing impacts on rights including data privacy.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Data transfer rules (GDPR Chapter V)</strong>
+                      <p>Personal data used for AI training may not be transferred to third countries without adequate protections (adequacy decisions, SCCs, BCRs).</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill eu-fill" style="width:88%"></div>
+                  </div>
+                  <span class="strength-pct">High (Rights-Based)</span>
+                </div>
+              </div>
+
+              <div class="dim-card us-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag us-flag">US</span>
+                  <h4>NIST AI RMF + State Laws</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>No federal AI privacy law</strong>
+                      <p>NIST AI RMF has no privacy mandates. The US lacks a comprehensive federal AI privacy law; protection comes from sector-specific rules and state laws.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>State-level requirements (patchwork)</strong>
+                      <p>Illinois BIPA (biometrics), California CCPA/CPRA (automated decision-making), Colorado AI Act, and ~5 other states have passed or proposed AI-specific privacy rules.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>NIST AI RMF Map/Measure recommendations</strong>
+                      <p>Recommends privacy risk assessments as part of AI lifecycle management, but does not mandate specific data practices.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Sector rules: HIPAA, FERPA, FCRA</strong>
+                      <p>Sector-specific data protection rules apply to AI in healthcare, education, and financial services, creating a fragmented compliance environment.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill us-fill" style="width:35%"></div>
+                  </div>
+                  <span class="strength-pct">Medium (Fragmented)</span>
+                </div>
+              </div>
+
+              <div class="dim-card cn-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag cn-flag">CN</span>
+                  <h4>China PIPL + DSL + AI Regs</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Data localization (PIPL Article 40 + DSL)</strong>
+                      <p>Critical Information Infrastructure operators and entities processing large volumes of personal data must store data within China. Cross-border transfers require CAC security assessment.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Training data compliance (GenAI Measures)</strong>
+                      <p>Training data must comply with PIPL and DSL. Providers must document data sources, quality assessment, and labelling rules. Cooperation with regulator inspections is mandatory.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Automated decision-making rights (PIPL)</strong>
+                      <p>Individuals subject to automated decisions affecting rights must be able to request human review, explanation, and refusal.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Personal Information Protection Impact Assessment</strong>
+                      <p>PIIA required before automated decision-making and other high-impact processing. Results must be retained for at least three years.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill cn-fill" style="width:85%"></div>
+                  </div>
+                  <span class="strength-pct">High (State-Centric)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LIABILITY -->
+          <div class="dim-panel" data-panel="liability">
+            <div class="dim-grid">
+              <div class="dim-card eu-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag eu-flag">EU</span>
+                  <h4>EU AI Act</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Tiered fine structure</strong>
+                      <p>Prohibited practices: up to <strong>€35M or 7% global turnover</strong>. High-risk violations: up to <strong>€15M or 3%</strong>. Misleading authorities: up to <strong>€7.5M or 1%</strong>.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Shared liability: providers and deployers</strong>
+                      <p>Both the AI system provider (who builds) and the deployer (who uses) bear compliance obligations. Vendor non-compliance flows through to deployer liability.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>EU AI Office + national authorities</strong>
+                      <p>Enforcement by the new EU AI Office (for GPAI models) and national competent authorities. Market withdrawal is a possible remedy.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Extraterritorial reach</strong>
+                      <p>Applies to any provider or deployer whose AI system affects persons in the EU, regardless of where the company is established. Non-EU companies may need an EU authorized representative.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill eu-fill" style="width:95%"></div>
+                  </div>
+                  <span class="strength-pct">Very High (Hard Law)</span>
+                </div>
+              </div>
+
+              <div class="dim-card us-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag us-flag">US</span>
+                  <h4>NIST AI RMF</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-voluntary">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Due diligence benchmark</strong>
+                      <p>NIST AI RMF is voluntary, but regulators and courts increasingly cite compliance as evidence of due diligence. Non-compliance is not itself illegal.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>FTC Section 5 (unfair/deceptive practices)</strong>
+                      <p>The FTC can pursue AI companies for deceptive AI disclosures or discriminatory outcomes under existing consumer protection authority.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Private rights of action (state laws)</strong>
+                      <p>State AI laws (Illinois BIPA, Colorado AI Act, Texas AI laws) create private rights of action. BIPA per-violation damages can be existential for companies.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-note">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>No federal AI-specific liability regime</strong>
+                      <p>As of 2026, no comprehensive federal AI liability law exists. Executive Order 14110 (Biden era) was partially revoked in 2025; US approach remains fragmented.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill us-fill" style="width:40%"></div>
+                  </div>
+                  <span class="strength-pct">Medium (Soft + Sector Law)</span>
+                </div>
+              </div>
+
+              <div class="dim-card cn-card">
+                <div class="dim-card-header">
+                  <span class="dim-flag cn-flag">CN</span>
+                  <h4>China Algorithm Reg.</h4>
+                </div>
+                <div class="dim-body">
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>CAC enforcement — fines and suspension</strong>
+                      <p>Violations lead to fines, rectification orders, or service suspension by the CAC and relevant ministries. Serious violations may result in criminal liability.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Criminal liability for severe breaches</strong>
+                      <p>Unlike EU and US regimes, Chinese law includes criminal prosecution pathways for egregious AI/algorithm regulation violations, particularly those affecting national security or public order.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-mandatory">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>PIPL liability for data misuse</strong>
+                      <p>Violations of PIPL in the AI context can result in fines up to 5% of prior year revenue plus personal liability for responsible executives.</p>
+                    </div>
+                  </div>
+                  <div class="req-item req-conditional">
+                    <span class="req-dot"></span>
+                    <div>
+                      <strong>Extraterritorial reach (Cybersecurity Law)</strong>
+                      <p>CAC can take "technical and other necessary measures" against foreign companies providing services to China that violate Chinese AI laws.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="dim-strength-bar">
+                  <span class="strength-label">Requirement Strength</span>
+                  <div class="strength-track">
+                    <div class="strength-fill cn-fill" style="width:88%"></div>
+                  </div>
+                  <span class="strength-pct">High (State Enforcement)</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONFLICTS SECTION -->
+    <section class="section" id="conflicts">
+      <div class="container">
+        <div class="section-label">Cross-Jurisdictional Conflicts</div>
+        <h2 class="section-title">5 Areas Where Regulations Directly Clash</h2>
+        <p class="section-sub">These conflicts create the most significant compliance hurdles for multinational AI projects that must operate simultaneously under all three frameworks.</p>
+
+        <div class="conflicts-list">
+
+          <div class="conflict-item">
+            <div class="conflict-num">01</div>
+            <div class="conflict-body">
+              <div class="conflict-header">
+                <h3 class="conflict-title">Data Localization vs. Cross-Border AI Training</h3>
+                <div class="conflict-tags">
+                  <span class="ctag ctag-eu">EU</span>
+                  <span class="ctag-vs">↔</span>
+                  <span class="ctag ctag-cn">CN</span>
+                  <span class="conflict-severity severity-critical">Critical</span>
+                </div>
+              </div>
+              <p class="conflict-desc">China's PIPL and Data Security Law mandate that certain categories of personal data and "important data" be stored within China and undergo CAC security assessment before any cross-border transfer. The EU's GDPR permits international data transfers only to countries with adequate protection or via approved mechanisms (SCCs, BCRs). These frameworks are structurally incompatible: a single global AI training dataset that contains both EU personal data and data on Chinese residents cannot be freely moved across both jurisdictions simultaneously, forcing multinationals to either fragment datasets geographically or maintain separate training pipelines for each market.</p>
+              <div class="conflict-detail">
+                <div class="conflict-col">
+                  <strong>EU Requirement</strong>
+                  <p>GDPR Chapter V: transfers only to adequate countries or via SCCs/BCRs. Transfers to China require additional safeguards; China does not have a GDPR adequacy decision.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>China Requirement</strong>
+                  <p>PIPL Article 40 + DSL: data of Chinese residents and "important data" must be stored in China; foreign recipients face CAC security assessment, entity listing risk.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>US Position</strong>
+                  <p>No federal data localization rule; NIST AI RMF recommends data provenance documentation but leaves cross-border handling to sector rules and state privacy laws.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="conflict-item">
+            <div class="conflict-num">02</div>
+            <div class="conflict-body">
+              <div class="conflict-header">
+                <h3 class="conflict-title">Transparency Obligations vs. Content Sovereignty</h3>
+                <div class="conflict-tags">
+                  <span class="ctag ctag-eu">EU</span>
+                  <span class="ctag-vs">↔</span>
+                  <span class="ctag ctag-cn">CN</span>
+                  <span class="ctag ctag-us">US</span>
+                  <span class="conflict-severity severity-high">High</span>
+                </div>
+              </div>
+              <p class="conflict-desc">The EU AI Act and NIST AI RMF frame transparency as a user right — the right to understand when and how AI is making decisions affecting them. China's transparency obligations serve a fundamentally different master: the state. Chinese algorithmic filing requires disclosing logic and mechanisms to the CAC (not the user), and content outputs must align with government-approved information standards. An AI system that is "transparent" in the EU sense (explaining its decision-making rationale openly to users) may simultaneously violate Chinese content regulations if that transparency reveals politically sensitive information or explains how content moderation suppression works. EU freedom-of-expression principles and Chinese content-control mandates are directly irreconcilable for any AI system providing information services in both markets.</p>
+              <div class="conflict-detail">
+                <div class="conflict-col">
+                  <strong>EU Requirement</strong>
+                  <p>Article 50: users must be informed about AI interactions; deepfakes must be labeled; transparency protects individual rights and democratic discourse.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>China Requirement</strong>
+                  <p>GenAI Measures: outputs must "conform to socialist core values"; illegal/harmful content must be removed and reported to CAC. Transparency is to the state, not the user.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>US Position</strong>
+                  <p>No binding transparency rule; First Amendment protections may conflict with EU or Chinese content-related mandates when applied to US-based platforms.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="conflict-item">
+            <div class="conflict-num">03</div>
+            <div class="conflict-body">
+              <div class="conflict-header">
+                <h3 class="conflict-title">Mandatory vs. Voluntary Compliance Architecture</h3>
+                <div class="conflict-tags">
+                  <span class="ctag ctag-eu">EU</span>
+                  <span class="ctag-vs">↔</span>
+                  <span class="ctag ctag-us">US</span>
+                  <span class="conflict-severity severity-high">High</span>
+                </div>
+              </div>
+              <p class="conflict-desc">The EU AI Act imposes legally binding obligations for high-risk AI, including mandatory third-party conformity assessments, CE marking, and EU database registration. The NIST AI RMF is entirely voluntary — its implementation as an EU compliance proxy is legally insufficient, as the European Commission has stated that only harmonized standards officially published by the EC can demonstrate AI Act compliance. Multinationals that build compliance programs around NIST (the dominant US industry benchmark) face a false sense of security: their NIST AI RMF alignment does not constitute or substitute for EU AI Act compliance, requiring duplicative governance infrastructure even when the underlying risk management activities substantially overlap.</p>
+              <div class="conflict-detail">
+                <div class="conflict-col">
+                  <strong>EU Requirement</strong>
+                  <p>Mandatory third-party conformity assessment, CE marking, and EU AI database registration for high-risk systems. Harmonized standards (not NIST) are the accepted compliance pathway.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>US Position</strong>
+                  <p>NIST AI RMF is voluntary; alignment demonstrates due diligence but creates no legal protection under EU law. US companies frequently treat NIST compliance as a proxy for EU compliance — this is a significant legal gap.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>China Requirement</strong>
+                  <p>Mandatory CAC filing, security assessments, and content compliance for algorithm providers — a separate mandatory regime not aligned with either EU or NIST frameworks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="conflict-item">
+            <div class="conflict-num">04</div>
+            <div class="conflict-body">
+              <div class="conflict-header">
+                <h3 class="conflict-title">Algorithmic Explainability vs. Trade Secret Protection</h3>
+                <div class="conflict-tags">
+                  <span class="ctag ctag-eu">EU</span>
+                  <span class="ctag-vs">↔</span>
+                  <span class="ctag ctag-cn">CN</span>
+                  <span class="ctag ctag-us">US</span>
+                  <span class="conflict-severity severity-medium">Medium</span>
+                </div>
+              </div>
+              <p class="conflict-desc">Both China and the EU require meaningful disclosure of algorithmic logic — the EU for high-risk system documentation and user-facing transparency, China for CAC filing and user rights (Article 17 opt-out explanations). However, the recipient and depth of required disclosure differ substantially. China's CAC filings require disclosure to the state, including training data sources and operating mechanisms, which may force foreign companies to expose proprietary architectures to Chinese government officials. EU transparency is primarily user-facing and competency-authority-facing, with trade secret protections built into GDPR recitals. The US has no comparable mandate but IP protections are strongest. Multinationals face the dilemma: comply with Chinese disclosure requirements and risk IP exposure, or protect IP and violate Chinese law.</p>
+              <div class="conflict-detail">
+                <div class="conflict-col">
+                  <strong>EU Requirement</strong>
+                  <p>High-risk AI providers must supply detailed technical documentation to national authorities; GDPR recitals preserve some trade secret protections in automated decision-making explanations.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>China Requirement</strong>
+                  <p>CAC filing requires disclosure of algorithm type, logic, and operating mechanisms. GenAI Measures Article 19: cooperate with regulators and explain training data sources, scale, and type.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>US Position</strong>
+                  <p>No federal algorithm disclosure requirement. Strongest IP protections. US companies face greatest exposure when Chinese disclosure requirements intersect with US trade secret law (Defend Trade Secrets Act).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="conflict-item">
+            <div class="conflict-num">05</div>
+            <div class="conflict-body">
+              <div class="conflict-header">
+                <h3 class="conflict-title">Prohibited AI Practices — Asymmetric Bans</h3>
+                <div class="conflict-tags">
+                  <span class="ctag ctag-eu">EU</span>
+                  <span class="ctag-vs">↔</span>
+                  <span class="ctag ctag-cn">CN</span>
+                  <span class="conflict-severity severity-critical">Critical</span>
+                </div>
+              </div>
+              <p class="conflict-desc">The EU AI Act explicitly bans "government-run social scoring of the type used in China" as an unacceptable-risk AI practice. This is not merely a philosophical divergence — it means an AI system that is compliant and actively mandated under Chinese law may be outright prohibited in the EU. China's government-operated social credit systems and behavior scoring tools are operational and legally required for certain public institutions, while the EU AI Act categorizes such applications as fundamentally incompatible with fundamental rights. This creates a direct legal impossibility for any organization deploying AI governance infrastructure that bridges both jurisdictions. Similarly, real-time biometric surveillance in public spaces is banned under the EU AI Act (with narrow exceptions) but is actively promoted under Chinese law for public security purposes.</p>
+              <div class="conflict-detail">
+                <div class="conflict-col">
+                  <strong>EU Prohibition</strong>
+                  <p>Article 5: government social scoring, manipulative AI, real-time biometric surveillance in public spaces, and emotion recognition in workplaces/schools are all banned — with no compliance pathway.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>China Mandate</strong>
+                  <p>Social credit systems and public-space biometric surveillance are active government programs with legal backing. Chinese organizations may be legally required to implement what the EU categorically prohibits.</p>
+                </div>
+                <div class="conflict-col">
+                  <strong>US Position</strong>
+                  <p>No federal ban; First and Fourth Amendment constraints limit government use, but private-sector biometric and scoring applications are largely permitted. Some state laws (Illinois, Texas) restrict facial recognition.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- POLICY WRITING GUIDE REMOVED -->
+    <section class="section section-alt" id="policy" style="display:none">
+      <div class="container">
+        <div class="section-label">Policy Writing Guide</div>
+        <h2 class="section-title">Structured Breakdown for Multinational AI Policy</h2>
+        <p class="section-sub">A framework for drafting AI governance policies that address all three regulatory regimes simultaneously.</p>
+
+        <div class="policy-grid">
+
+          <div class="policy-card">
+            <div class="policy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9 12h6M9 16h6M9 8h2M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/></svg>
+            </div>
+            <h4 class="policy-title">1. AI System Inventory &amp; Classification</h4>
+            <div class="policy-steps">
+              <div class="policy-step">
+                <span class="step-num">A</span>
+                <p>Map every AI system to EU risk tiers (Unacceptable / High / Limited / Minimal) using Annex III criteria</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">B</span>
+                <p>Apply NIST AI RMF AI-BOM: document model, data, and vendor provenance for all systems</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">C</span>
+                <p>Identify which systems require CAC algorithm filing under China's "public opinion or social mobilization" threshold</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">D</span>
+                <p>Flag systems implicated by any of the 5 conflict areas above — these require dedicated policy treatment</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4 class="policy-title">2. Data Governance Architecture</h4>
+            <div class="policy-steps">
+              <div class="policy-step">
+                <span class="step-num">A</span>
+                <p>Segment training and operational data by jurisdiction of origin; do not commingle EU personal data with Chinese-resident data in a single dataset</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">B</span>
+                <p>Implement data localization controls for China market: maintain separate pipelines, local storage, and CAC-compliant security assessment readiness</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">C</span>
+                <p>Execute GDPR Standard Contractual Clauses (SCCs) for any AI vendor receiving EU-resident personal data; confirm no China data transfer channel exists in that chain</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">D</span>
+                <p>Document data provenance for NIST Measure function; use as basis for EU technical documentation requirements</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+            </div>
+            <h4 class="policy-title">3. Human Oversight Protocol</h4>
+            <div class="policy-steps">
+              <div class="policy-step">
+                <span class="step-num">A</span>
+                <p>Satisfy the EU's highest bar first: assign named oversight personnel with documented competencies for all high-risk AI systems</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">B</span>
+                <p>Implement technical stop/override mechanisms compliant with EU Article 14 — these also satisfy NIST Manage function recommendations</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">C</span>
+                <p>For China market systems: document CAC inspection cooperation procedures; train staff on authority access rights and disclosure scope</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">D</span>
+                <p>Maintain audit logs for all human oversight interventions; required for EU conformity assessment and useful for US litigation defense</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h4 class="policy-title">4. Transparency Policy Dual-Track</h4>
+            <div class="policy-steps">
+              <div class="policy-step">
+                <span class="step-num">A</span>
+                <p>EU/US track: implement user-facing AI disclosures, watermarking (EU deadline: December 2026), and content authenticity mechanisms for all markets</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">B</span>
+                <p>China track: prepare algorithm self-assessment reports for CAC filing; brief legal team on scope of required disclosure vs. trade secret protections</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">C</span>
+                <p>Define a "safe harbor" set of algorithmic information that can be disclosed to Chinese authorities without triggering trade secret exposure under US or EU law</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">D</span>
+                <p>For information services operating in both markets: determine whether a single AI system can comply with both EU transparency (user rights) and Chinese content-control obligations, or whether market separation is necessary</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card">
+            <div class="policy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <h4 class="policy-title">5. Liability Allocation Framework</h4>
+            <div class="policy-steps">
+              <div class="policy-step">
+                <span class="step-num">A</span>
+                <p>Require AI Act compliance warranties in all vendor contracts; document the provider-deployer liability chain as required under EU shared responsibility rules</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">B</span>
+                <p>Conduct fundamental rights impact assessments (FRIAs) and personal information protection impact assessments (PIIAs) for all high-risk or high-volume systems</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">C</span>
+                <p>Map US state AI liability exposure: identify deployments subject to Illinois BIPA, Colorado AI Act, or CPRA automated-decision-making rules; quantify per-violation exposure</p>
+              </div>
+              <div class="policy-step">
+                <span class="step-num">D</span>
+                <p>Maintain NIST AI RMF alignment documentation as US litigation due diligence evidence; this is the primary US legal risk mitigation tool absent a federal AI law</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="policy-card policy-card-key">
+            <div class="policy-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            </div>
+            <h4 class="policy-title">Key Deadlines for Policy Teams</h4>
+            <div class="deadlines-table">
+              <div class="dl-row dl-header">
+                <span>Deadline</span>
+                <span>Obligation</span>
+                <span>Framework</span>
+              </div>
+              <div class="dl-row dl-past">
+                <span>Feb 2, 2025</span>
+                <span>Banned AI practices prohibited; AI literacy obligations in force</span>
+                <span class="dl-tag eu-tag">EU AI Act</span>
+              </div>
+              <div class="dl-row dl-past">
+                <span>Aug 2, 2025</span>
+                <span>GPAI model transparency requirements in force</span>
+                <span class="dl-tag eu-tag">EU AI Act</span>
+              </div>
+              <div class="dl-row dl-past">
+                <span>Aug 2, 2026</span>
+                <span>Article 50 transparency obligations apply: deepfake and AI-generated content labeling</span>
+                <span class="dl-tag eu-tag">EU AI Act</span>
+              </div>
+              <div class="dl-row dl-upcoming">
+                <span>Dec 2, 2026</span>
+                <span>Watermarking grace period ends for generative AI systems already on the market before Aug 2, 2026 (Art. 50(2))</span>
+                <span class="dl-tag eu-tag">EU AI Act Omnibus</span>
+              </div>
+              <div class="dl-row dl-upcoming">
+                <span>Dec 2, 2027</span>
+                <span>Standalone high-risk AI systems full compliance</span>
+                <span class="dl-tag eu-tag">EU AI Act Omnibus</span>
+              </div>
+              <div class="dl-row">
+                <span>Aug 2, 2028</span>
+                <span>High-risk AI embedded in regulated products</span>
+                <span class="dl-tag eu-tag">EU AI Act Omnibus</span>
+              </div>
+              <div class="dl-row">
+                <span>Ongoing</span>
+                <span>10-day filing window after any new algorithm service launch</span>
+                <span class="dl-tag cn-tag">China CAC</span>
+              </div>
+              <div class="dl-row">
+                <span>Ongoing</span>
+                <span>Continuous AI RMF profile updates; Critical Infrastructure Profile (2026)</span>
+                <span class="dl-tag us-tag">NIST</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SOURCES FOOTER -->
+    <section class="section sources-section">
+      <div class="container">
+        <div class="section-label">Sources &amp; References</div>
+        <div class="sources-grid">
+          <a href="https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai" target="_blank" class="source-link">European Commission — EU AI Act Official Framework</a>
+          <a href="https://artificialintelligenceact.eu" target="_blank" class="source-link">EU Artificial Intelligence Act — Full Text &amp; Analysis</a>
+          <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" class="source-link">NIST — AI Risk Management Framework (AI RMF 1.0)</a>
+          <a href="https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-china" target="_blank" class="source-link">White &amp; Case — China AI Regulatory Tracker 2025</a>
+          <a href="https://www.chinalawtranslate.com/en/algorithms/" target="_blank" class="source-link">China Law Translate — Algorithm Recommendation Regulation</a>
+          <a href="https://www.legalithm.com/en/blog/ai-regulation-comparison-eu-us-uk-china-global" target="_blank" class="source-link">Legalithm — AI Regulation Compared (2026)</a>
+          <a href="https://www.magicmirrorsecurity.com/blog/nist-vs-eu-ai-act-which-ai-risk-framework-should-you-follow" target="_blank" class="source-link">MagicMirror Security — NIST vs EU AI Act Comparison</a>
+          <a href="https://www.eccouncil.org/cybersecurity-exchange/responsible-ai-governance/eu-ai-act-nist-ai-rmf-and-iso-iec-42001-a-plain-english-comparison/" target="_blank" class="source-link">EC-Council — EU AI Act vs NIST AI RMF vs ISO 42001</a>
+          <a href="https://trustarc.com/resource/data-localization-global-privacy-laws/" target="_blank" class="source-link">TrustArc — Data Localization Across Global Privacy Laws</a>
+          <a href="https://www.hunton.com/privacy-and-cybersecurity-law-blog/european-commission-releases-draft-guidelines-on-high-risk-ai-under-the-eu-ai-act" target="_blank" class="source-link">Hunton Andrews Kurth — High-Risk AI Draft Guidelines 2026</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 댓글 (Giscus) =====
+       활성화 4단계:
+       (1) GitHub 저장소 ai_governance_dashboard 를 public 으로.
+       (2) 저장소 Settings > General > Features 에서 Discussions 체크.
+       (3) https://github.com/apps/giscus 에서 giscus 앱을 이 저장소에 설치.
+       (4) https://giscus.app 에 저장소 주소를 넣으면 나오는 data-repo-id 와
+           data-category-id 를 아래 자리에 붙여넣기. -->
+  <section class="section section-alt" id="comments">
+    <div class="container">
+      <div class="section-label">Discussion</div>
+      <h2 class="section-title">Comments &amp; Feedback</h2>
+      <p style="max-width:680px;margin:0 0 1.5rem;opacity:.85">
+        Thoughts, corrections, or a jurisdiction you want added? Leave a comment below.
+        Sign in with GitHub to post. Comments are stored in this repository's Discussions.
+      </p>
+      <script src="https://giscus.app/client.js"
+              data-repo="purplekimlauren/ai_governance_dashboard"
+              data-repo-id="R_kgDOS0uEkg"
+              data-category="General"
+              data-category-id="DIC_kwDOS0uEks4DIdgC"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="preferred_color_scheme"
+              data-lang="en"
+              crossorigin="anonymous"
+              async>
+      </script>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-author">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="16" height="16"><circle cx="12" cy="8" r="4"/><path d="M6 20v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg>
+        <span>Research &amp; Analysis by <strong>Lauren Min Kim</strong></span>
+      </div>
+      <p>Global AI Governance Framework Dashboard — Research as of May 2026. For legal advice, consult qualified counsel in each jurisdiction.</p>
+    </div>
+  </footer>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>

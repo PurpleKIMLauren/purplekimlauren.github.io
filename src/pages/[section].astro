@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import { SITE_TITLE, SECTIONS } from '../consts';
+
+export async function getStaticPaths() {
+	return SECTIONS.map((s) => ({ params: { section: s.slug }, props: s }));
+}
+
+const { section } = Astro.params;
+const info = Astro.props;
+const posts = (await getCollection('blog'))
+	.filter((p) => !p.data.draft && p.data.category === section)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={`${info.label} — ${SITE_TITLE}`} description={info.blurb} />
+		<style>
+			.section-head { margin-bottom: 2rem; }
+			.section-head p { color: rgb(var(--gray)); }
+			ul { padding: 0; }
+			.post { list-style: none; margin: 0 0 1.5rem; }
+			.post a { text-decoration: none; }
+			.post .date { color: rgb(var(--gray)); font-size: 0.9rem; margin: 0; }
+			.post h3 { margin: 0.1rem 0; color: rgb(var(--black)); }
+			.post .desc { color: rgb(var(--gray)); margin: 0.2rem 0 0; }
+			.empty { color: rgb(var(--gray)); }
+		</style>
+	</head>
+	<body>
+		<Header />
+		<main>
+			<div class="section-head">
+				<h1>{info.label}</h1>
+				<p>{info.blurb}</p>
+			</div>
+			{posts.length === 0 && <p class="empty">No posts yet. Coming soon.</p>}
+			<ul>
+				{posts.map((post) => (
+					<li class="post">
+						<a href={`/blog/${post.id}/`}>
+							<p class="date"><FormattedDate date={post.data.pubDate} /></p>
+							<h3>{post.data.title}</h3>
+							<p class="desc">{post.data.description}</p>
+						</a>
+					</li>
+				))}
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
