@@ -12,7 +12,7 @@ const blog = defineCollection({
 			updatedDate: z.coerce.date().optional(),
 			heroImage: z.optional(image()),
 			// Which section this post belongs to.
-			category: z.enum(['predictions', 'briefings', 'data', 'notes']).default('notes'),
+			category: z.enum(['foreign-affairs', 'data', 'notes']).default('notes'),
 			// Freeform tags.
 			tags: z.array(z.string()).default([]),
 			// Hide from listings while drafting.

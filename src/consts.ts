@@ -7,8 +7,7 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/in/laurenminkim/';
 
 // Section definitions (used for nav + category pages)
 export const SECTIONS = [
-	{ slug: 'predictions', label: 'Predictions', blurb: 'Data-based forecasts on AI and international conflict.' },
-	{ slug: 'briefings', label: 'Briefings', blurb: 'Synthesized roundups of reporting and open-source findings.' },
+	{ slug: 'foreign-affairs', label: 'Foreign Affairs', blurb: 'Forecasts and briefings on international conflict, security, and the forces that drive them.' },
 	{ slug: 'data', label: 'Data', blurb: 'Interactive dashboards and datasets.' },
 	{ slug: 'notes', label: 'Notes', blurb: 'Shorter observations and analysis.' },
 ];

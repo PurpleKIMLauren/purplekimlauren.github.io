@@ -2,7 +2,7 @@
 title: 'The War in Yemen, the Houthi Strikes on Aramco, and the Backstory'
 description: 'The 2022 truce has broken down and Houthi strikes on Saudi oil and aviation infrastructure are intensifying. What connects a Yemeni war to an Aramco fire — and a dated, falsifiable read on where the next months go.'
 pubDate: 2026-10-15
-category: 'predictions'
+category: 'foreign-affairs'
 tags: ['yemen', 'houthis', 'saudi-arabia', 'oil', 'forecast', 'escalation']
 draft: false
 ---

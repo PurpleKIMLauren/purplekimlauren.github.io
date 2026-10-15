@@ -14,10 +14,10 @@ The work is grounded in open sources. Where I make a forecast, I show the reason
 behind it, and I date it so it can be checked later. Where I summarize the reporting, I link what
 I read.
 
-Three kinds of posts live here:
+The work is organized into a few places:
 
-- **Predictions** — data-based forecasts on AI and international conflict.
-- **Briefings** — synthesized roundups of reporting and open-source findings.
+- **Foreign Affairs** — forecasts and briefings on international conflict and security.
 - **Data** — interactive dashboards and datasets.
+- **Policy Room** — tools and interactive analyses.
 
 More soon.
