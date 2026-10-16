@@ -9,8 +9,6 @@ import Header from '../components/Header.astro';
 type Props = CollectionEntry<'blog'>['data'];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
-const mtLangs = [['한국어','ko'],['日本語','ja'],['中文','zh-CN'],['Español','es'],['Deutsch','de'],['Français','fr']];
-const mtBase = 'https://purplekimlauren-github-io.translate.goog' + Astro.url.pathname;
 ---
 
 <html lang="en">
@@ -54,9 +52,6 @@ const mtBase = 'https://purplekimlauren-github-io.translate.goog' + Astro.url.pa
 			.last-updated-on {
 				font-style: italic;
 			}
-			.translate-note { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid rgb(var(--gray-light)); font-size: 0.85rem; color: rgb(var(--gray)); }
-			.translate-note a { margin: 0 0.4rem; color: rgb(var(--accent)); text-decoration: none; }
-			.translate-note a:hover { text-decoration: underline; }
 		</style>
 	</head>
 
@@ -81,12 +76,6 @@ const mtBase = 'https://purplekimlauren-github-io.translate.goog' + Astro.url.pa
 						<hr />
 					</div>
 					<slot />
-					<div class="translate-note" data-no-i18n>
-						Read this article, machine-translated:
-						{mtLangs.map(([label, code]) => (
-							<a href={`${mtBase}?_x_tr_sl=en&_x_tr_tl=${code}&_x_tr_hl=${code}`} target="_blank" rel="noopener">{label}</a>
-						))}
-					</div>
 				</div>
 			</article>
 		</main>
