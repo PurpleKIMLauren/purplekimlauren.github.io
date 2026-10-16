@@ -4,7 +4,13 @@ import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import { SITE_DESCRIPTION, SITE_TITLE, SECTIONS } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+
+const homeCards = [
+	{ href: '/foreign-affairs', label: 'Foreign Affairs', blurb: 'Forecasts and briefings on international conflict and security.' },
+	{ href: '/data', label: 'Data', blurb: 'Interactive dashboards and datasets.' },
+	{ href: '/policy-room', label: 'Policy Room', blurb: 'Tools, dashboards, and policy analyses.' },
+];
 
 const posts = (await getCollection('blog'))
 	.filter((p) => !p.data.draft)
@@ -20,7 +26,7 @@ const posts = (await getCollection('blog'))
 			.intro { margin-bottom: 2.5rem; }
 			.intro h1 { margin-bottom: 0.3rem; }
 			.tagline { color: rgb(var(--gray)); font-size: 1.1rem; }
-			.sections { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 2rem 0 3rem; }
+			.sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0 3rem; }
 			.sections a { display: block; padding: 1.1rem 1.2rem; border: 1px solid rgb(var(--gray-light)); border-radius: 12px; text-decoration: none; transition: 0.2s ease; }
 			.sections a:hover { box-shadow: var(--box-shadow); border-color: rgb(var(--accent)); }
 			.sections h3 { margin: 0 0 0.25rem; color: rgb(var(--black)); }
@@ -42,10 +48,10 @@ const posts = (await getCollection('blog'))
 			</div>
 
 			<div class="sections">
-				{SECTIONS.map((s) => (
-					<a href={`/${s.slug}`}>
-						<h3>{s.label}</h3>
-						<p>{s.blurb}</p>
+				{homeCards.map((c) => (
+					<a href={c.href}>
+						<h3>{c.label}</h3>
+						<p>{c.blurb}</p>
 					</a>
 				))}
 			</div>
