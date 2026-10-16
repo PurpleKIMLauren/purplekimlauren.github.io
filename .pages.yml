@@ -7,7 +7,7 @@ content:
     label: Posts
     type: collection
     path: src/content/blog
-    format: frontmatter
+    format: yaml-frontmatter
     view:
       fields: [title, category, pubDate, draft]
     fields:
