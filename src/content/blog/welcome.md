@@ -16,7 +16,7 @@ I read.
 
 The work is organized into a few places:
 
-- **Foreign Affairs** — forecasts and briefings on international conflict and security.
+- **Int'l Affairs** — forecasts and briefings on international conflict and security.
 - **Data** — interactive dashboards and datasets.
 - **Policy Room** — tools and interactive analyses.
 
