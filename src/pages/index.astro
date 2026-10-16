@@ -29,6 +29,10 @@ const posts = (await getCollection('blog'))
 			.sections { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0 3rem; }
 			.sections a { display: block; padding: 1.1rem 1.2rem; border: 1px solid rgb(var(--gray-light)); border-radius: 12px; text-decoration: none; transition: 0.2s ease; }
 			.sections a:hover { box-shadow: var(--box-shadow); border-color: rgb(var(--accent)); }
+			.notes-card { display:block; margin: 0 0 3rem; padding: 1rem 1.2rem; border: 1px dashed rgb(var(--gray-light)); border-radius: 12px; text-decoration:none; transition:0.2s ease; }
+			.notes-card:hover { border-color: rgb(var(--accent)); box-shadow: var(--box-shadow); }
+			.notes-card h3 { margin:0 0 0.2rem; color: rgb(var(--black)); font-size:1.4rem; }
+			.notes-card p { margin:0; color: rgb(var(--gray)); font-size:0.95rem; }
 			.sections h3 { margin: 0 0 0.25rem; color: rgb(var(--black)); }
 			.sections p { margin: 0; color: rgb(var(--gray)); font-size: 0.95rem; }
 			.latest li { list-style: none; margin: 0 0 1rem; padding: 0; }
@@ -55,6 +59,10 @@ const posts = (await getCollection('blog'))
 					</a>
 				))}
 			</div>
+			<a class="notes-card" href="/notes">
+				<h3>Notes</h3>
+				<p>Light announcements and short, personal takes.</p>
+			</a>
 
 			<h2>Latest</h2>
 			<ul class="latest">

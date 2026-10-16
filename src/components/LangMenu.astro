@@ -1,0 +1,73 @@
+---
+---
+<select data-lang-menu aria-label="Language" class="lang-menu" data-no-i18n>
+	<option value="en">EN</option>
+	<option value="zh-CN">中文</option>
+	<option value="ja">日本語</option>
+	<option value="ko">한국어</option>
+	<option value="es">Español</option>
+	<option value="de">Deutsch</option>
+	<option value="fr">Français</option>
+</select>
+<style>
+	.lang-menu {
+		font: inherit;
+		font-size: 0.8rem;
+		color: rgb(var(--gray-dark));
+		background: transparent;
+		border: 1px solid rgb(var(--gray-light));
+		border-radius: 999px;
+		padding: 0.3rem 0.5rem;
+		cursor: pointer;
+	}
+</style>
+<script is:inline>
+	(function () {
+		const sel = document.querySelector('[data-lang-menu]');
+		if (!sel) return;
+		const cache = {};
+		const skip = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'SELECT', 'OPTION']);
+		function collect() {
+			const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+				acceptNode(n) {
+					if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+					let p = n.parentNode;
+					while (p && p !== document.body) {
+						if (skip.has(p.nodeName)) return NodeFilter.FILTER_REJECT;
+						if (p.hasAttribute && p.hasAttribute('data-no-i18n')) return NodeFilter.FILTER_REJECT;
+						p = p.parentNode;
+					}
+					return NodeFilter.FILTER_ACCEPT;
+				}
+			});
+			const a = []; let n; while ((n = w.nextNode())) a.push(n); return a;
+		}
+		const ns = collect();
+		const orig = ns.map((n) => n.nodeValue);
+		const norm = (s) => s.replace(/\s+/g, ' ').trim();
+		function restore() { ns.forEach((n, i) => { n.nodeValue = orig[i]; }); }
+		function apply(d) {
+			ns.forEach((n, i) => {
+				const t = d[norm(orig[i])];
+				if (t != null) {
+					const lead = (orig[i].match(/^\s*/) || [''])[0];
+					const tr = (orig[i].match(/\s*$/) || [''])[0];
+					n.nodeValue = lead + t + tr;
+				} else { n.nodeValue = orig[i]; }
+			});
+		}
+		async function setLang(l) {
+			try { localStorage.setItem('site_lang', l); } catch (e) {}
+			if (l === 'en') { restore(); return; }
+			try {
+				if (!cache[l]) { const r = await fetch('/i18n/' + l + '.json'); cache[l] = await r.json(); }
+				apply(cache[l]);
+			} catch (e) {}
+		}
+		let saved = 'en';
+		try { saved = localStorage.getItem('site_lang') || 'en'; } catch (e) {}
+		sel.value = saved;
+		if (saved !== 'en') setLang(saved);
+		sel.addEventListener('change', () => setLang(sel.value));
+	})();
+</script>

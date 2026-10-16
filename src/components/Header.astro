@@ -1,6 +1,7 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 import { SITE_TITLE, GITHUB_URL, LINKEDIN_URL } from '../consts';
+import LangMenu from './LangMenu.astro';
 ---
 
 <header>
@@ -13,6 +14,7 @@ import { SITE_TITLE, GITHUB_URL, LINKEDIN_URL } from '../consts';
 			<HeaderLink href="/policy-room">Policy Room</HeaderLink>
 			<HeaderLink href="/about">About</HeaderLink>
 		</div>
+		<LangMenu />
 		<div class="social-links">
 			<a href={LINKEDIN_URL} target="_blank" rel="noopener">
 				<span class="sr-only">LinkedIn</span>
