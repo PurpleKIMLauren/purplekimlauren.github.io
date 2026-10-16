@@ -61,7 +61,7 @@
 				try { localStorage.setItem('site_lang', l); } catch (e) {}
 				if (l === 'en') { restore(); return; }
 				try {
-					if (!cache[l]) { const r = await fetch('/i18n/' + l + '.json'); cache[l] = await r.json(); }
+					if (!cache[l]) { const r = await fetch('/i18n/' + l + '.json', { cache: 'no-cache' }); cache[l] = await r.json(); }
 					apply(cache[l]);
 				} catch (e) {}
 			}
