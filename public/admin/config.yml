@@ -2,7 +2,7 @@ backend:
   name: github
   repo: PurpleKIMLauren/purplekimlauren.github.io
   branch: main
-  base_url: REPLACE_WITH_WORKER_URL   # Cloudflare Worker 배포 후 교체
+  base_url: https://sveltia-cms-auth.minkim629-471.workers.dev
 
 media_folder: public/media
 public_folder: /media
