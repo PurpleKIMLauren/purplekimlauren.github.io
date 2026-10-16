@@ -10,7 +10,6 @@ content:
     format: frontmatter
     view:
       fields: [title, category, pubDate, draft]
-      sort: [pubDate]
     fields:
       - name: title
         label: Title
@@ -21,23 +20,19 @@ content:
       - name: pubDate
         label: Published date
         type: date
-        options:
-          format: yyyy-MM-dd
       - name: updatedDate
-        label: Updated date (optional)
+        label: Updated date
         type: date
         required: false
-        options:
-          format: yyyy-MM-dd
       - name: category
         label: Section
         type: select
         default: notes
         options:
           values:
-            - { value: foreign-affairs, label: "Int'l Affairs" }
-            - { value: data, label: Data }
-            - { value: notes, label: Notes }
+            - { name: foreign-affairs, label: "Int'l Affairs" }
+            - { name: data, label: Data }
+            - { name: notes, label: Notes }
       - name: tags
         label: Tags
         type: string
