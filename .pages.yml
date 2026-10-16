@@ -1,0 +1,51 @@
+media:
+  input: public/media
+  output: /media
+
+content:
+  - name: posts
+    label: Posts
+    type: collection
+    path: src/content/blog
+    format: frontmatter
+    view:
+      fields: [title, category, pubDate, draft]
+      sort: [pubDate]
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: description
+        label: Description
+        type: text
+      - name: pubDate
+        label: Published date
+        type: date
+        options:
+          format: yyyy-MM-dd
+      - name: updatedDate
+        label: Updated date (optional)
+        type: date
+        required: false
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Section
+        type: select
+        default: notes
+        options:
+          values:
+            - { value: foreign-affairs, label: "Int'l Affairs" }
+            - { value: data, label: Data }
+            - { value: notes, label: Notes }
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+      - name: draft
+        label: Draft (hide until ready)
+        type: boolean
+        default: false
+      - name: body
+        label: Body
+        type: rich-text
