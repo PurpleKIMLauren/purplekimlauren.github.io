@@ -8,6 +8,7 @@ const today = new Date();
 		<a href={LINKEDIN_URL} target="_blank" rel="noopener">LinkedIn</a>
 		<a href={GITHUB_URL} target="_blank" rel="noopener">GitHub</a>
 		<a href="/about">About</a>
+		<a href="https://app.pagescms.org/PurpleKIMLauren/purplekimlauren.github.io/main" target="_blank" rel="noopener" class="write">Write</a>
 	</div>
 	<p class="copy">&copy; {today.getFullYear()} {SITE_TITLE}. Open-source analysis; views are my own.</p>
 </footer>
@@ -16,5 +17,7 @@ const today = new Date();
 	.links { display: flex; justify-content: center; gap: 1.5em; margin-bottom: 0.8em; }
 	.links a { color: rgb(var(--gray-dark)); text-decoration: none; font-weight: 600; }
 	.links a:hover { color: var(--accent); }
+	.links a.write { opacity: 0.55; }
+	.links a.write:hover { opacity: 1; }
 	.copy { margin: 0; font-size: 0.9em; }
 </style>
